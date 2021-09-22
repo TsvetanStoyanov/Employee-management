@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="col-sm-6"></div>
+  <form [formGroup]="formData" #form="ngForm">
+    <div class="mb-3">
+      <label for="firstName" class="form-label">First Name*</label>
+      <input
+        type="text"
+        formControlName="firstName"
+        class="form-control"
+        id="firstName"
+        name="firstName"
+        aria-describedby="firstName"
+        required
+      />
+      <span class="text-muted" *ngIf="!formData.controls['firstName'].valid && formData.controls['firstName']?.touched">Please enter a valid first name</span>
+    </div>
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input
+        type="text"
+        formControlName="lastName"
+        class="form-control"
+        id="lastName"
+        aria-describedby="lastName"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="experience" class="form-label">Experience</label>
+      <input
+        type="text"
+        formControlName="experience"
+        class="form-control"
+        id="experience"
+        aria-describedby="experience"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Starting date</label>
+      <input
+        type="text"
+        formControlName="dateStarted"
+        class="form-control datepicker"
+        id="dateStarted"
+        aria-describedby="dateStarted"
+        data-provide="datepicker"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="salary" class="form-label">Salary</label>
+      <input
+        type="text"
+        formControlName="salary"
+        class="form-control"
+        id="salary"
+        aria-describedby="salary"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="vacation" class="form-label">Vacation days</label>
+      <input
+        type="text"
+        formControlName="vacation"
+        class="form-control"
+        id="vacation"
+        aria-describedby="vacation"
+      />
+    </div>
+    <a [routerLink]="'/'" class="btn btn-secondary mx-3">back</a>
+    <button
+      type="button"
+      (click)="postEmplyeeDetails()"
+      class="btn btn-primary"
+    >
+      Add
+    </button>
+  </form>
+</div>

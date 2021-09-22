@@ -1,0 +1,146 @@
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Experience</th>
+      <th>Date started</th>
+      <th>Salary</th>
+      <th>Vacation days</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of employeeData">
+      <td>{{ row.id }}</td>
+      <td>{{ row.firstName }}</td>
+      <td>{{ row.lastName }}</td>
+      <td>{{ row.experience }}</td>
+      <td>{{ row.dateStarted }}</td>
+      <td>{{ row.salary }}</td>
+      <td>{{ row.vacation }}</td>
+      <td>
+        <button
+          (click)="rowEdit(row)"
+          type="button"
+          class="btn btn-warning"
+          data-bs-toggle="modal"
+          data-bs-target="#employeeModal"
+        >
+          Edit
+        </button>
+        <button (click)="deleteRow(row)" class="btn btn-danger mx-3">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="employeeModal"
+  tabindex="-1"
+  aria-labelledby="EmployeeModal"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="EmployeeModal">Employee details</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formData" #form="ngForm">
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input
+              type="text"
+              formControlName="firstName"
+              class="form-control"
+              id="firstName"
+              aria-describedby="firstName"
+              required
+            />
+            <span class="help-block">Please enter a name!</span>
+          </div>
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input
+              type="text"
+              formControlName="lastName"
+              class="form-control"
+              id="lastName"
+              aria-describedby="lastName"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="experience" class="form-label">Experience</label>
+            <input
+              type="text"
+              formControlName="experience"
+              class="form-control"
+              id="experience"
+              aria-describedby="experience"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Starting date</label
+            >
+            <input
+              type="text"
+              formControlName="dateStarted"
+              class="form-control"
+              id="dateStarted"
+              aria-describedby="dateStarted"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Salary</label>
+            <input
+              type="text"
+              formControlName="salary"
+              class="form-control"
+              id="salary"
+              aria-describedby="salary"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Vacation days</label
+            >
+            <input
+              type="text"
+              formControlName="vacation"
+              class="form-control"
+              id="vacation"
+              aria-describedby="vacation"
+            />
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          type="button"
+          id="cancel"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+        <button
+          type="button" (click)="updateEmplyeeDetails()" class="btn btn-success"> Update
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

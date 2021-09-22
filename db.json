@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": 3,
+      "firstName": "Peter",
+      "lastName": "Denev",
+      "experience": "5 years",
+      "dateStarted": "12.08.2020",
+      "salary": "",
+      "vacation": "20"
+    },
+    {
+      "id": 2,
+      "firstName": "Test",
+      "lastName": "Finale",
+      "experience": "-5",
+      "dateStarted": "16.08.2019",
+      "salary": "230",
+      "vacation": "502"
+    },
+    {
+      "id": 7,
+      "firstName": "John",
+      "lastName": "Doe",
+      "experience": "10",
+      "dateStarted": "12.04.2020",
+      "salary": "45",
+      "vacation": "23"
+    },
+    {
+      "id": 8,
+      "firstName": "c",
+      "lastName": "dwqdwqdqw",
+      "experience": "",
+      "dateStarted": "",
+      "salary": "",
+      "vacation": "dq"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
