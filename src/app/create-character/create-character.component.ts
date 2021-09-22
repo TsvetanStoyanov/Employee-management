@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { EmployeeModel } from '../employee-dashboard/employee-dashboard.model';
-import { EmployeeService } from '../employee.service';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { EmployeeModel } from "../employee-dashboard/employee-dashboard.model";
+import { EmployeeService } from "../employee.service";
 
 @Component({
-  selector: 'app-create-character',
-  templateUrl: './create-character.component.html',
-  styleUrls: ['./create-character.component.css'],
+  selector: "app-create-character",
+  templateUrl: "./create-character.component.html",
+  styleUrls: ["./create-character.component.css"],
 })
 export class CreateCharacterComponent implements OnInit {
   formData!: FormGroup;
@@ -20,12 +20,12 @@ export class CreateCharacterComponent implements OnInit {
 
   ngOnInit(): void {
     this.formData = this.FormBuilder.group({
-      firstName: [''],
-      lastName: [''],
-      experience: [''],
-      dateStarted: [''],
-      salary: [''],
-      vacation: [''],
+      firstName: [""],
+      lastName: [""],
+      experience: [""],
+      dateStarted: [""],
+      salary: [""],
+      vacation: [""],
     });
   }
 
@@ -39,7 +39,7 @@ export class CreateCharacterComponent implements OnInit {
   //POST ALL DATA FROM INPUTS
   postEmplyeeDetails() {
     if (this.formData.invalid) {
-      alert('Please fill required inputs');
+      alert("Please fill required inputs");
       return;
     }
 
@@ -55,10 +55,10 @@ export class CreateCharacterComponent implements OnInit {
       (res) => {
         console.log(res);
         this.getAllEmployee();
-        window.location.href = '/';
+        window.location.href = "/";
       },
       (err) => {
-        alert('Something went wrong!');
+        alert("Something went wrong!");
       }
     );
   }

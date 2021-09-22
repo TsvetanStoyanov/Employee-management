@@ -1,22 +1,22 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { map } from "rxjs/operators";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class EmployeeService {
   constructor(private http: HttpClient) {}
 
   postRow(data: any) {
-    return this.http.post<any>('http://localhost:3000/posts', data).pipe(
+    return this.http.post<any>("http://localhost:3000/posts", data).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
   getRows() {
-    return this.http.get<any>('http://localhost:3000/posts').pipe(
+    return this.http.get<any>("http://localhost:3000/posts").pipe(
       map((res: any) => {
         return res;
       })
@@ -24,14 +24,14 @@ export class EmployeeService {
   }
 
   updateRow(data: any, id: number) {
-    return this.http.put<any>('http://localhost:3000/posts/' + id, data).pipe(
+    return this.http.put<any>("http://localhost:3000/posts/" + id, data).pipe(
       map((res: any) => {
         return res;
       })
     );
   }
   deleteRow(id: number) {
-    return this.http.delete<any>('http://localhost:3000/posts/' + id).pipe(
+    return this.http.delete<any>("http://localhost:3000/posts/" + id).pipe(
       map((res: any) => {
         return res;
       })
